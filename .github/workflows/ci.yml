@@ -51,4 +51,4 @@ jobs:
       uses: actions/upload-artifact@v4.6.2
       with:
        name: jarToDonwload
-       path: target/*.jar
+       path: pipeload/target/*.jar
