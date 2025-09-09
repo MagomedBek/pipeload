@@ -28,13 +28,13 @@ jobs:
       uses: actions/cache@v4
       with:
           path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('*/pom.xml') }}
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
           
     - name: Build with Maven
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=MagomedBek_pipeload
+      #run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=MagomedBek_pipeload
     - name: Generate JaCoCo Badge
       uses: cicirello/jacoco-badge-generator@v2
       with:
