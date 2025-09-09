@@ -24,6 +24,7 @@ jobs:
       uses: cicirello/jacoco-badge-generator@v2
       with:
         generate-branches-badge: true
+        jacoco-csv-file: pipeload/target/site/jacoco/jacoco.csv
     - name: Commit the Jacoco badge (if it changed) # the generated badges have to be committed in order to be available on the readme.md file
       run: |
         if [[ `git status --porcelain *.svg` ]]; then
