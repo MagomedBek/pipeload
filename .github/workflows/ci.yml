@@ -34,7 +34,7 @@ jobs:
     - name: Build with Maven
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      run: mvn test jacoco:check --file pipeload/pom.xml
+      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=MagomedBek_pipeload
     - name: Generate JaCoCo Badge
       uses: cicirello/jacoco-badge-generator@v2
       with:
@@ -67,7 +67,7 @@ jobs:
       with:
        name: jarToDonwload
        path: pipeload/target/*.jar
-       run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=MagomedBek_pipeload
+    
    
     
     
